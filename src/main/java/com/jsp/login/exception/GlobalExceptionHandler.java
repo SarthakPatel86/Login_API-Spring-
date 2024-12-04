@@ -12,4 +12,10 @@ public class GlobalExceptionHandler {
 	ResponseEntity invalidCredentials(InvalidCredentialException e1) {
 		return new ResponseEntity(e1.getMessage(),HttpStatus.NOT_FOUND);
 	}
+	
+	@ExceptionHandler(InvalidOtpException.class)
+	ResponseEntity invalidOtpException(InvalidOtpException e2) {
+		return new ResponseEntity(e2.getMessage(),HttpStatus.NOT_FOUND);
+	}
+	
 }

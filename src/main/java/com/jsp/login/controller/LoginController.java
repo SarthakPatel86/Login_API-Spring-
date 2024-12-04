@@ -28,5 +28,9 @@ public class LoginController {
 		return new ResponseEntity(loginService.login(value, password),HttpStatus.FOUND);
 	}
 	
-	
+
+	@GetMapping("/verify")
+	ResponseEntity<User> verifyById(@RequestHeader int otp){
+		return new ResponseEntity<User>(loginService.verifyOtp(otp),HttpStatus.ACCEPTED);
+	}
 }
